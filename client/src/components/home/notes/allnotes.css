@@ -1,0 +1,75 @@
+
+
+  .notes-container {
+    margin-top: 2.5rem;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2rem;
+    /* background-color: #cfdee4; */
+  }
+
+  .note-card {
+    background-color: #f5e6cc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 1.2rem 2rem;
+    width: 16rem;
+    height: 18rem;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .note-header {
+    background-color: #3498db; /* Blue color for the note header */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .note-content {
+    height: 9rem;
+    padding: 16px;
+    color: #333;
+  }
+
+  .note-buttons {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.6rem;
+    border-top: 1px solid #eee;
+    background-color: #add8e6;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    background-color: #2ecc71; /* Green color for buttons */
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .delete-btn {
+    background-color: #e74c3c; /* Red color for delete button */
+  }
+
+  .edit-btn:hover{
+    background-color: #08f96c;
+  }
+  .delete-btn:hover {
+    background-color: #27ae60; /* Darker green on hover */
+  }
+
+  .edit-btn a{
+    text-decoration: none;
+  }

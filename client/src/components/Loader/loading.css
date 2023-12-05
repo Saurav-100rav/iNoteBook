@@ -1,0 +1,24 @@
+.Loading-container{
+    width: 100vw;
+    height: 100vh;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    /* background: white; */
+}
+.loader{
+    width: 5rem;
+    height: 5rem;
+    border-bottom: 4px solid rgba(33, 33, 35, 0.687);
+    border-radius: 50%;
+    animation: rotateLoader 700ms linear infinite;
+    position: absolute;
+    top: 3.8rem;
+    left: 50%;
+}
+@keyframes rotateLoader {
+  to {
+    transform: rotateZ(360deg);
+  }
+
+}
