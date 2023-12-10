@@ -2,7 +2,8 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 // Mock API URL (replace with your actual API endpoint)
-const API_URL = 'http://localhost:5000/api/v1';
+// const API_URL = 'http://localhost:5000/api/v1';
+const API_URL = 'https://inotebook-backend-xi93.onrender.com'
 
 // Define an async thunk to fetch products
 export const loginUser = createAsyncThunk('loginUser', async (obj) => {
