@@ -109,6 +109,7 @@ const userSlice = createSlice({
                 console.log(action.payload.data.success,action.payload.data.user)
               state.isAuthenticated = true;
               state.user = action.payload.data.user;
+              localStorage.setItem('authToken', action.payload.data.token);
             }
             
           })
