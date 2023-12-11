@@ -20,6 +20,9 @@ const AllNotes = () => {
                 setLoading(false);
                 setNotes(res.data.message)
             } 
+            else{
+                console.log(res);
+            }
         } catch (error) {
             setLoading(false);
             console.error("Error while fetching all Notes.",error.message)

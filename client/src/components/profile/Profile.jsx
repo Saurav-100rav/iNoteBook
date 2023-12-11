@@ -2,18 +2,30 @@ import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Loading from "../Loader/Loading";
+import axios from "axios"
 import "./profile.css";
 
 const Profile = ({ history }) => {
 
   const navigate = useNavigate();
   const { error, status , isAuthenticated,user } = useSelector((state) => state.User );
-  // useEffect(() => {
+  
+  useEffect(() => {
   //   if (isAuthenticated === false) {
   //       console.log(isAuthenticated);
   //     navigate("/login");
   //   }
   // }, [isAuthenticated]);
+    getTempData();
+  },[])
+  const getTempData = async()=>{
+    try {
+      const res = await axios.get("https://inotebook-backend-xi93.onrender.com/api/v1/notes/getallTasks",{ withCredentials: true });
+      console.log("All Notes = ",res);
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return (
     <>
       {status==="loading" ? (
