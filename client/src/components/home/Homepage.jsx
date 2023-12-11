@@ -18,7 +18,11 @@ const Homepage = () => {
       },[])
       const getTempData = async()=>{
         try {
-          const res = await axios.get("https://inotebook-backend-xi93.onrender.com/api/v1/notes/getallTasks",{ withCredentials: true });
+          const token =  localStorage.getItem('authToken');
+          const res = await axios.get("https://inotebook-backend-xi93.onrender.com/api/v1/notes/getallTasks",
+          // { withCredentials: true }
+          {token}
+          );
           console.log("All Notes = ",res);
         } catch (error) {
           console.log(error);
