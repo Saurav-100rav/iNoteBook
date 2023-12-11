@@ -18,7 +18,7 @@ const Homepage = () => {
       },[])
       const getTempData = async()=>{
         try {
-          const token =  localStorage.getItem('authToken');
+          const token =  localStorage.getItem('token');
           const res = await axios.get("https://inotebook-backend-xi93.onrender.com/api/v1/notes/getallTasks",
           // { withCredentials: true }
           {token}
