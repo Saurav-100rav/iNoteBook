@@ -8,11 +8,13 @@ const fetchUser = async(req,res,next)=>{
         const token = req.cookies.token;
         // console.log("Token present = ",token);
 
-        if (!token) 
-        return res.status(401).json({
-            "success" : false,
-            "message" : "Unauthorized Access. Please login first to use this service."
-        });
+        if (!token) {
+            console.log("NO token found");
+            return res.status(401).json({
+                "success" : false,
+                "message" : "Unauthorized Access. Please login first to use this service."
+            });
+        }
         else{
             // Verify the JWT token
             const decodedData = jwt.verify(token, process.env.JWT_SECRET); // Replace with your actual secret key
