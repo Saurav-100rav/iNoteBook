@@ -14,7 +14,7 @@ const AllNotes = () => {
     const fetchAllNotes = async()=>{
         try {
             setLoading(true);
-            const res = await axios.get("http://localhost:5000/api/v1/notes/getallTasks",{ withCredentials: true });
+            const res = await axios.get("https://inotebook-backend-xi93.onrender.com/api/v1/notes/getallTasks",{ withCredentials: true });
             console.log("All Notes = ",res);
             if(res.data.success){
                 setLoading(false);
@@ -28,7 +28,7 @@ const AllNotes = () => {
     const deleteNote = async(id)=>{
         try {
             setLoading(true);
-            const res = await axios.delete(`http://localhost:5000/api/v1/notes/getsinglenote/${id}`,{ withCredentials: true });
+            const res = await axios.delete(`https://inotebook-backend-xi93.onrender.com/api/v1/notes/getsinglenote/${id}`,{ withCredentials: true });
             console.log("After deleting = ",res);
             if(res.data.success){
                 setLoading(false);
