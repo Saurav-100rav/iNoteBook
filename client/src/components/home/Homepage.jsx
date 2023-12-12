@@ -20,7 +20,7 @@ const Homepage = () => {
         try {
           const token =  localStorage.getItem('token');
           const res = await axios.get("https://inotebook-backend-xi93.onrender.com/api/v1/notes/getallTasks",
-          // { withCredentials: true }
+          { withCredentials: true },
           {token}
           );
           console.log("All Notes = ",res);
