@@ -5,8 +5,9 @@ const ProtectedRoutes = ({isAuthenticated,children}) => {
     console.log(isAuthenticated,children);
     useEffect(()=>{
         const token = localStorage.getItem("token")
-        if (!token)
-        // (!isAuthenticated)
+        if 
+        // (!token)
+        (!isAuthenticated)
          {
             // return 
             navigate("/login");

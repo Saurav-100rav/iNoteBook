@@ -48,9 +48,7 @@ function App() {
               />
             <Route  path="/profile"
                   element={
-                    <ProtectedRoutes 
-                    // isAuthenticated={isAuthenticated}
-                    >
+                    <ProtectedRoutes isAuthenticated={isAuthenticated}>
                       <Profile />
                     </ProtectedRoutes>
                     }
