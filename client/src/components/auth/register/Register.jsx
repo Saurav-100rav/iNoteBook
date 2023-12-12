@@ -27,7 +27,7 @@ const Register = () => {
            if(password===cpassword){
              try {
             //    const res = await axios.post("https://login-signup-69ih.onrender.com/register",input);
-               const res = await axios.post("http://localhost:5000/api/v1/auth/createUser",inputvalue);
+               const res = await axios.post("https://inotebook-backend-xi93.onrender.com/api/v1/auth/createUser",inputvalue);
                console.log(res)
                if(!res.data.success){
                  alert("This email is already registered in our database...\nPlease signup with a new email..");
