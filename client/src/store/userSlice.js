@@ -28,7 +28,13 @@ export const loginUser = createAsyncThunk('loginUser', async (obj) => {
 export const isLoggedIn = createAsyncThunk('isLoggedIn', async (obj) => {
     try {
         // console.log("password is ",obj.password,obj.email)
+        const token =  localStorage.getItem('token');
         const res = await axios.get(`${API_URL}/auth/profile`,
+        {
+          headers: {
+              "token": token,
+          },
+      },
         { withCredentials: true }
         );
         // if(res.data.msg==="Success") return true;

@@ -14,14 +14,20 @@ const Homepage = () => {
       //     navigate("/login");
       //   }
       // }, [isAuthenticated]);
+      console.log("here")
         getTempData();
       },[])
       const getTempData = async()=>{
         try {
           const token =  localStorage.getItem('token');
+          console.log("token = ",token);
           const res = await axios.get("https://inotebook-backend-xi93.onrender.com/api/v1/notes/getallTasks",
           { withCredentials: true },
-          {token}
+          {
+            headers: {
+                "token": token,
+            },
+        }
           );
           console.log("All Notes = ",res);
         } catch (error) {

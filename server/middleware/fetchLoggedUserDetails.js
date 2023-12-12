@@ -7,7 +7,7 @@ const fetchUser = async(req,res,next)=>{
         // Check if a JWT token is present in cookies
         // const token = req.cookies.token;
         // console.log("Token present = ",token);
-        const token = req.body.token;
+        const token = req.header("token");
 
         if (!token) {
             console.log("NO token found");
