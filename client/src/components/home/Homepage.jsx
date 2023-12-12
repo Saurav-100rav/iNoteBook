@@ -22,12 +22,13 @@ const Homepage = () => {
           const token =  localStorage.getItem('token');
           console.log("token = ",token);
           const res = await axios.get("https://inotebook-backend-xi93.onrender.com/api/v1/notes/getallTasks",
-          { withCredentials: true },
+          
           {
             headers: {
                 "token": token,
             },
-        }
+        },
+        { withCredentials: true }
           );
           console.log("All Notes = ",res);
         } catch (error) {
