@@ -20,7 +20,14 @@ const Profile = ({ history }) => {
   },[])
   const getTempData = async()=>{
     try {
-      const res = await axios.get("https://inotebook-backend-xi93.onrender.com/api/v1/notes/getallTasks",{ withCredentials: true });
+      const token = localStorage.getItem('token');
+      const res = await axios.get("https://inotebook-backend-xi93.onrender.com/api/v1/notes/getallTasks",
+      {
+        headers: {
+            "token": token,
+        },
+    },
+      { withCredentials: true });
       console.log("All Notes = ",res);
     } catch (error) {
       console.log(error);
