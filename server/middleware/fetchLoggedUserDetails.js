@@ -8,7 +8,7 @@ const fetchUser = async(req,res,next)=>{
         // const token = req.cookies.token;
         // console.log("Token present = ",token);
         const token = req.header("token");
-
+        console.log("Token present for loggedin user  = ",token);
         if (!token) {
             console.log("NO token found");
             return res.status(401).json({
