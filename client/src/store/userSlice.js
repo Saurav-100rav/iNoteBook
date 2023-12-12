@@ -50,24 +50,24 @@ export const isLoggedIn = createAsyncThunk('isLoggedIn', async (obj) => {
           return false;
       }
 });
-export const logout = createAsyncThunk('logout', async () => {
-  try {
-      const res = await axios.get(`${API_URL}/auth/logout`,
-      { withCredentials: true }
-      );
-      // if(res.data.msg==="Success") return true;
-      // else return false;
-      // return res.data.user;
-      console.log(res);
-      return res;
+// export const logout = createAsyncThunk('logout', async () => {
+//   try {
+//       const res = await axios.get(`${API_URL}/auth/logout`,
+//       { withCredentials: true }
+//       );
+//       // if(res.data.msg==="Success") return true;
+//       // else return false;
+//       // return res.data.user;
+//       console.log(res);
+//       return res;
 
   
-    } catch (error) {
-      //   alert("some error while authenticating users identity...");
-        console.log("error while getting users identity..",error);
-        return false;
-    }
-});
+//     } catch (error) {
+//       //   alert("some error while authenticating users identity...");
+//         console.log("error while getting users identity..",error);
+//         return false;
+//     }
+// });
 
 
 const userSlice = createSlice({
@@ -87,6 +87,11 @@ const userSlice = createSlice({
         //         val.id !== action.payload.id
         //     )
         // }
+        logout : (state,action)=>{
+              state.isAuthenticated = false;
+              state.user = null;
+        }
+
     },
     extraReducers: (builder) => {
         builder
@@ -123,25 +128,25 @@ const userSlice = createSlice({
             state.status = 'failed';
             state.error = action.error.message;
           })
-          .addCase(logout.pending, (state) => {
-            state.status = 'loading';
-          })
-          .addCase(logout.fulfilled, (state, action) => {
-            state.status = 'succeeded';
-            if(action.payload && action.payload.data.success){
-              console.log(action.payload.data.success,action.payload.data.message)
-              state.isAuthenticated = false;
-              state.user = null;
-            }
+          // .addCase(logout.pending, (state) => {
+          //   state.status = 'loading';
+          // })
+          // .addCase(logout.fulfilled, (state, action) => {
+          //   state.status = 'succeeded';
+          //   if(action.payload && action.payload.data.success){
+          //     console.log(action.payload.data.success,action.payload.data.message)
+          //     state.isAuthenticated = false;
+          //     state.user = null;
+          //   }
             
-          })
-          .addCase(logout.rejected, (state, action) => {
-            state.status = 'failed';
-            state.error = action.error.message;
-          });
+          // })
+          // .addCase(logout.rejected, (state, action) => {
+          //   state.status = 'failed';
+          //   state.error = action.error.message;
+          // });
       },
 
 })
 
-export const {getApiConfiguration,getGenres} = userSlice.actions;
+export const {logout} = userSlice.actions;
 export default userSlice.reducer;
