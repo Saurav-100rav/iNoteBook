@@ -1,5 +1,5 @@
 import axios from "axios"
-const url = "http://localhost:5000/api/v1"
+const url = "https://inotebook-backend-xi93.onrender.com/api/v1"
 const findSingleNote = (id) =>{
     try {
         console.log("id = ",id)
