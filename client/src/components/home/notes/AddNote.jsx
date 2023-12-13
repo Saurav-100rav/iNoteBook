@@ -20,7 +20,15 @@ const AddNote = () => {
         e.preventDefault();
         try {   
             setLoading(true);
-            const res = await axios.post("https://inotebook-backend-xi93.onrender.com/api/v1/notes/addTask",inputValue,{ withCredentials: true });
+            const token = localStorage.getItem('token');
+            const res = await axios.post("https://inotebook-backend-xi93.onrender.com/api/v1/notes/addTask",
+                                            inputValue,
+                                            {
+                                                headers: {
+                                                    "token": token,
+                                                },
+                                            },
+                                            { withCredentials: true });
             console.log(res);
             setLoading(false);
             if(res.data.success){

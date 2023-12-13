@@ -40,7 +40,13 @@ const EditNote = () => {
     const submitHandler = async(e)=>{
         e.preventDefault();
         try {   
-            const res = await axios.put(`https://inotebook-backend-xi93.onrender.com/api/v1/notes/getsinglenote/${id}`,inputValue,{ withCredentials: true });
+            const token = localStorage.getItem('token');
+            const res = await axios.put(`https://inotebook-backend-xi93.onrender.com/api/v1/notes/getsinglenote/${id}`,inputValue,
+            {
+                headers: {
+                    "token": token,
+                },
+            },{ withCredentials: true });
             console.log(res);
             if(res.data.success){
                 // alert("update successful");
