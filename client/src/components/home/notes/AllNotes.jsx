@@ -37,8 +37,15 @@ const AllNotes = () => {
     }
     const deleteNote = async(id)=>{
         try {
+            const token = localStorage.getItem('token');
             setLoading(true);
-            const res = await axios.delete(`https://inotebook-backend-xi93.onrender.com/api/v1/notes/getsinglenote/${id}`,{ withCredentials: true });
+            const res = await axios.delete(`https://inotebook-backend-xi93.onrender.com/api/v1/notes/getsinglenote/${id}`,
+            {
+                headers: {
+                    "token": token,
+                },
+            },
+            { withCredentials: true });
             console.log("After deleting = ",res);
             if(res.data.success){
                 setLoading(false);
