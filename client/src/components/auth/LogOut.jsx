@@ -15,10 +15,10 @@ const LogOut = () => {
       if(!isAuthenticated) {
         navigate("/login");
       }
-      
-      localStorage.clear();
       dispatch(logout());
+      localStorage.clear();
       alert("LogOut successfully...");
+      console.log(isAuthenticated)
       navigate("/login");
     }
   return (
