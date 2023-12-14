@@ -17,7 +17,7 @@ const LogOut = () => {
       }
       
       localStorage.clear();
-      dispatch(logout);
+      dispatch(logout());
       alert("LogOut successfully...");
       navigate("/login");
     }

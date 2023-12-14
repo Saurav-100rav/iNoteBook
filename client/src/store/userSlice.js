@@ -88,8 +88,10 @@ const userSlice = createSlice({
         //     )
         // }
         logout : (state,action)=>{
+              console.log(state.isAuthenticated);
               state.isAuthenticated = false;
               state.user = null;
+              console.log(state.isAuthenticated)
         }
 
     },
