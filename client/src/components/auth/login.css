@@ -82,16 +82,16 @@
   @media (max-width:450px){
     .login-container {
       width: 90vw;
-      height: 82vh;
-      margin: 4rem auto 0;
+      height: 66vh;
+      margin: 6rem auto 0;
       padding: 2.6rem 1rem;
     }
   }
   @media (max-width:300px){
     .login-container {
       width: 98vw;
-      height: 82vh;
-      margin: 4rem auto 0;
+      height: 68vh;
+      margin: 6rem auto 0;
       padding: 2.6rem 1rem;
     }
   }
