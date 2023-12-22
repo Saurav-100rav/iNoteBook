@@ -51,7 +51,7 @@ const Register = () => {
    
   return (
     <div className='form'>
-          <p>Add User</p>
+          <p id='heading'>Add User</p>
         <form autoComplete='off' onSubmit={RegisterUser}>
 
           <div className="inputfield">

@@ -1,8 +1,8 @@
 .form{
     width: 40vw;
-    height: 80vh;
+    height: 84vh;
     /* border: 2px solid red; */
-    margin: 2rem auto;
+    margin: 4rem auto;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -44,8 +44,11 @@ form .submit-button:hover{
 .form p{
     display: flex;
     justify-content: center;
-  font-size: 1.8rem;
-  font-weight: 600;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+#heading{
+  margin-top: 1.5rem;
 }
 form .login-link{
   font-size: 1.2rem;
@@ -73,8 +76,10 @@ form .login-link a:hover{
   }
 @media(max-width:700px){
     .form{
+      margin-top: 6rem;
       width: 85vw;
-      height: 88vh;
+      height: 70vh;
+      gap: 0.8rem;
     }
     .inputfield{
       margin-left: 0;
