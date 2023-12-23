@@ -3,8 +3,10 @@ import React , {useState} from 'react'
 import { useNavigate,Link } from 'react-router-dom';
 import axios from 'axios';
 import "./register.css"
+import Loading from "../../Loader/Loading"
 
 const Register = () => {
+    const [loading,setLoading] = useState(false);
     const obj = {
         'name' : '',
         'email' : '',
@@ -27,17 +29,21 @@ const Register = () => {
            if(password===cpassword){
              try {
             //    const res = await axios.post("https://login-signup-69ih.onrender.com/register",input);
+               setLoading(true);
                const res = await axios.post("https://inotebook-backend-xi93.onrender.com/api/v1/auth/createUser",inputvalue);
                console.log(res)
                if(!res.data.success){
+                 setLoading(false);
                  alert("This email is already registered in our database...\nPlease signup with a new email..");
                  setinputvalue(obj);
                }
                else{
-                 alert("congrats,User added Successfully")
-                 navigate("/login")
+                 setLoading(false);
+                 alert("congrats,User added Successfully");
+                 navigate("/login");
                }
              } catch (error) {
+               setLoading(false);
                console.log("Error while registering User..",error);
              }
    
@@ -50,6 +56,8 @@ const Register = () => {
      }
    
   return (
+    <>
+    {loading ? <Loading/> :
     <div className='form'>
           <p id='heading'>Add User</p>
         <form autoComplete='off' onSubmit={RegisterUser}>
@@ -79,7 +87,8 @@ const Register = () => {
 
         </form>
     </div>
-    
+    }
+    </>
   )
 }
 

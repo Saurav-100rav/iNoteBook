@@ -21,7 +21,7 @@ export const loginUser = createAsyncThunk('loginUser', async (obj) => {
       } catch (error) {
         //   alert("some error while authenticating users identity...");
           console.log("error while getting users identity..",error);
-          return false;
+          return error;
       }
 });
 
@@ -117,18 +117,32 @@ const userSlice = createSlice({
             state.status = 'loading';
           })
           .addCase(loginUser.fulfilled, (state, action) => {
-            state.status = 'succeeded';
-            if(action.payload && action.payload.data.success){
+            console.log(action.payload);
+            // console.log(action.payload.response.data.success);
+            if(action.payload.response?.data?.success===false){
+              console.log(action.payload.response.data.success)
+            state.status = 'failed';  
+            state.isAuthenticated = false;
+            state.user = null;
+            return ;
+            // alert("login successfull.");
+          }
+            else if(action.payload  && action.payload.data.success){
                 console.log(action.payload.data.success,action.payload.data.user)
+              state.status = 'succeeded';  
               state.isAuthenticated = true;
               state.user = action.payload.data.user;
               localStorage.setItem('token', action.payload.data.token);
+              alert("login successfull.");
             }
+           
             
           })
           .addCase(loginUser.rejected, (state, action) => {
+            console.log(action.payload)
             state.status = 'failed';
             state.error = action.error.message;
+            
           })
           // .addCase(logout.pending, (state) => {
           //   state.status = 'loading';

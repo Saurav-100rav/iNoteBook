@@ -23,9 +23,29 @@ const Login = () => {
     const val = e.target.value;
     setCredentials( {...credentials,[input_type]:val});
   }
-  const loginRequest = (e)=>{
-    e.preventDefault();
-    dispatch(loginUser(credentials));
+  const loginRequest = async(e)=>{
+    try {
+      e.preventDefault();
+      if(credentials.email===""){
+        alert("Please enter your email for login..");
+        return;
+      }
+      else if(credentials.password===""){
+        alert("Please enter your password...");
+        return;
+      }
+      e.preventDefault();
+      const res = await dispatch(loginUser(credentials));
+      console.log(res);
+      if(res.payload?.response?.data.success===false){
+        alert(res.payload.response.data.message);
+        setCredentials(obj);
+      }
+  } catch (error) {
+    console.log("error while logging..",error);
+    alert(error.message);
+  }
+    
   }
   return (
     <>
