@@ -77,7 +77,7 @@ function App() {
                     }
               />    
           </Routes>
-          <Footer/>
+          { isAuthenticated ? <Footer/> :""}
         </Router>
       </NoteState>
   );

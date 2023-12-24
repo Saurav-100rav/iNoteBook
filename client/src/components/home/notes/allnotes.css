@@ -1,13 +1,15 @@
 
 
   .notes-container {
-    margin-top: 2.5rem;
+    border: 2px solid green;
+    margin-top: 3rem;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 2rem;
+    margin-bottom: 4rem;
     /* background-color: #cfdee4; */
   }
 

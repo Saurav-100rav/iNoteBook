@@ -7,7 +7,8 @@
 
 .footer {
   /* text-align: center; */
-  position: sticky;
+  width: 100vw;
+  position: fixed;
   bottom: 0;
   padding: 0rem 6.5rem;
   background-color: #333;
