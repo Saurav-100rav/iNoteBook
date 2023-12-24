@@ -3,3 +3,42 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* Home.css */
+
+.footer {
+  /* text-align: center; */
+  position: sticky;
+  bottom: 0;
+  padding: 0rem 6.5rem;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.footer a {
+  color: #ffcc00;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #ffd700;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 600px) {
+  .footer {
+    padding: 10px;
+  }
+
+  .footer p {
+    font-size: 14px;
+  }
+}

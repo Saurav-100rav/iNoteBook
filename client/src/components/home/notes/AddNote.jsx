@@ -26,7 +26,7 @@ const AddNote = () => {
                                             {
                                                 headers: {
                                                     "token": token,
-                                                },
+                                                }, 
                                             },
                                             { withCredentials: true });
             console.log(res);
@@ -37,7 +37,8 @@ const AddNote = () => {
             }
         } catch (error) {
             setLoading(false);
-            console.log("Error while making new Note.",error)
+            alert("Error while making new Note.",error.message);
+            console.log("Error while making new Note.",error);
         }
     }
   return (

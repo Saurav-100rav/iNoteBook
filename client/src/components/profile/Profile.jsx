@@ -48,16 +48,16 @@ const Profile = ({ history }) => {
                     {/* <Link to="/me/update">Edit Profile</Link> */}
             </div>
 
-            <div>
-                    <div>
+            <div className="profile-info">
+                    <div className="user-name">
                       <h4>Full Name</h4>
                       <p>{user?.name}</p>
                     </div>
-                    <div>
+                    <div className="user-email">
                       <h4>Email</h4>
                       <p>{user?.email}</p>
                     </div>
-                    <div>
+                    <div className="user-joining">
                       <h4>Joined On</h4>
                       <p>{String(user?.createdAt).substr(0, 10)}</p>
                     </div>

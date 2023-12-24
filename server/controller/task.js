@@ -76,7 +76,11 @@ const AddNewNote = async(req,res)=>{
 
     } catch (error) {
         console.error("Error while making new Note..",error.message);
-        res.status(500).send("Internal Server Error");
+        res.status(500).json({
+            "success" : false,
+            "message" : error.message
+            }
+        )
     }
 } 
 // router.post('/addnote', fetchuser, [

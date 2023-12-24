@@ -32,7 +32,8 @@ const AllNotes = () => {
             }
         } catch (error) {
             setLoading(false);
-            console.error("Error while fetching all Notes.",error.message)
+            alert("Error while fetching all Notes.",error.message)
+            console.error("Error while fetching all Notes.",error.message);
         }
     }
     const deleteNote = async(id)=>{
@@ -54,6 +55,7 @@ const AllNotes = () => {
             } 
         } catch (error) {
             setLoading(false);
+            alert("Error while deleting Note.",error.message)
             console.error("Error while deleting Note.",error.message)
         }
     }

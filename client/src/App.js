@@ -15,6 +15,7 @@ import { Navbar } from './components/navbar/Navbar';
 import LogOut from './components/auth/LogOut';
 import EditNote from './components/home/notes/EditNote';
 import Loading from './components/Loader/Loading';
+import Footer from './components/footer/Footer';
 
 function App() {
     const dispatch = useDispatch();
@@ -76,6 +77,7 @@ function App() {
                     }
               />    
           </Routes>
+          <Footer/>
         </Router>
       </NoteState>
   );
